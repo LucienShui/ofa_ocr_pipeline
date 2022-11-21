@@ -22,9 +22,14 @@ def ofa_ocr_gr():
         # OCR文字识别流程
         def ocr_pip(image_in, boxes):
             boxes = np.asarray(sorted(boxes.tolist(), key=lambda x: x[1]))
-            req = urllib.request.urlopen(image_in)  # 读图片
-            arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
-            img = cv2.imdecode(arr, -1)  # 'Load it as it is'
+            if isinstance(image_in, str):
+                req = urllib.request.urlopen(image_in)  # 读图片
+                arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+                img = cv2.imdecode(arr, -1)  # 'Load it as it is'
+            elif isinstance(image_in, Image):
+                img = image_in
+            else:
+                raise Exception(f'unsupported type of input image found[{type(image_in)}]!')
             img_return = img.copy()
             ret_l = list()
             index = 1
