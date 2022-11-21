@@ -70,9 +70,9 @@ def ofa_ocr_gr():
                   'or click any one of the examples, and click “Submit” and then wait for the ' \
                   'generated OCR result. 中文OCR体验区。欢迎上传图片，静待检测文字返回~'
 
-    ocr_input_image = gr.components.Image(label='image', type='pil')
+    ocr_input_image = gr.components.Image(label='image')
 
-    ocr_output_image = gr.components.Image(label='image', type='pil')
+    ocr_output_image = gr.components.Image(label='image')
     ocr_output_text = gr.components.Dataframe(headers=['Box ID', 'Text'])
 
     ocr_demo = gr.Interface(
