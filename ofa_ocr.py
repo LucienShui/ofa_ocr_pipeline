@@ -2,6 +2,7 @@ import gradio as gr
 import numpy as np
 import urllib
 import cv2
+from PIL import Image
 from modelscope.pipelines import pipeline
 from modelscope.utils.constant import Tasks
 from modelscope.outputs import OutputKeys
