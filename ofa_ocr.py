@@ -26,7 +26,7 @@ def ofa_ocr_gr():
                 req = urllib.request.urlopen(image_in)  # 读图片
                 arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
                 img = cv2.imdecode(arr, -1)  # 'Load it as it is'
-            elif isinstance(image_in, Image):
+            elif isinstance(image_in, Image.Image):
                 img = image_in
             else:
                 raise Exception(f'unsupported type of input image found[{type(image_in)}]!')
