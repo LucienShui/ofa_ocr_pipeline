@@ -39,13 +39,13 @@ def ofa_ocr_gr():
                 p1, p2 = (int(np.min(post1[:, 0])), int(np.min(post1[:, 1]))), \
                          (int(np.max(post1[:, 0])), int(np.max(post1[:, 1])))
                 # draw rectangle
-                cv2.rectangle(img_return, p1, p2, (0, 0, 255), 4)
+                cv2.rectangle(img_return, p1, p2, (255, 0, 0), 4)
 
                 p_text = p1[0] + 8 if p1[0] + 8 < p2[0] else p2[0], \
                          p1[1] + 25 if p1[1] + 25 < p2[1] else p2[1]
                 # draw index
                 cv2.putText(img_return, str(index), p_text, cv2.FONT_HERSHEY_SIMPLEX,
-                            0.75, (0, 0, 255), 2)
+                            0.75, (255, 0, 0), 2)
 
                 width = box[4] - box[0]
                 height = box[5] - box[1]
@@ -63,6 +63,7 @@ def ofa_ocr_gr():
         return ocr_pip(image, result)
 
     examples = [
+        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/ocr_essay.jpg"
     ]
 
     title = "<h1 align='center'>基于OFA的OCR识别的应用</h1>"
@@ -82,7 +83,9 @@ def ofa_ocr_gr():
         title=title,
         description=description,
         allow_flagging='never',
-        examples=examples
+        examples=examples,
+        examples_per_page=5,
+        cache_examples=True
     )
 
     return ocr_demo
