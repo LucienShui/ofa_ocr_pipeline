@@ -1,0 +1,1 @@
+from easyocrlite.reader import ReaderLite

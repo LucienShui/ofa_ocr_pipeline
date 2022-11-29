@@ -1,1 +1,4 @@
 .idea
+gradio_cached_examples/
+easyocrlite.egg-info
+build
