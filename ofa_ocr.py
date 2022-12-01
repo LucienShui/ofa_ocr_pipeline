@@ -27,6 +27,8 @@ def get_images(img: str, reader: ReaderLite, **kwargs):
 
 def draw_boxes(image, bounds, color='red', width=4):
     draw = ImageDraw.Draw(image)
+    import pdb
+    pdb.set_trace()
     for i, bound in enumerate(bounds):
         p0, p1, p2, p3 = bound
         draw.text((p0[0]+5, p0[1]+5), str(i+1), fill=color, align='center')
@@ -52,12 +54,12 @@ def ofa_ocr_gr():
         return img, result
 
     examples = [
-        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/qiaodaima.jpg",
-        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/shupai.jpg",
+        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/qiaodaima.png",
+        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/shupai.png",
         "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/ocr_essay.jpg",
         "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/chinese.jpg",
-        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/benpao.jpg",
-        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/gaidao.jpg",
+        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/benpao.jpeg",
+        "http://xingchen-data.oss-cn-zhangjiakou.aliyuncs.com/maas/ocr/gaidao.jpeg",
     ]
 
     title = "<h1 align='center'>基于OFA的OCR识别的应用</h1>"
@@ -91,7 +93,5 @@ if __name__ == "__main__":
             ["OCR识别"],
     ) as demo:
         demo.launch(
-            server_name="11.160.225.203",
-            server_port=7861,
             enable_queue=True,
         )
