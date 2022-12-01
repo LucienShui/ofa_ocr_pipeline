@@ -27,8 +27,6 @@ def get_images(img: str, reader: ReaderLite, **kwargs):
 
 def draw_boxes(image, bounds, color='red', width=4):
     draw = ImageDraw.Draw(image)
-    import pdb
-    pdb.set_trace()
     for i, bound in enumerate(bounds):
         p0, p1, p2, p3 = bound
         draw.text((p0[0]+5, p0[1]+5), str(i+1), fill=color, align='center')
