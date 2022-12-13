@@ -61,14 +61,12 @@ def ofa_ocr_gr():
     ]
 
     title = "<h1 align='center'>基于OFA的OCR识别的应用</h1>"
-    description = 'Gradio Demo for Chinese OCR based on OFA-Base. Upload your own image ' \
-                  'or click any one of the examples, and click “Submit” and then wait for the ' \
-                  'generated OCR result. 中文OCR体验区。欢迎上传图片，静待检测文字返回~'
+    description = '中文OCR体验区，欢迎上传图片，静待检测文字返回~ 相关OCR代码和模型都已在ModelScope开源，支持finetune，欢迎大家在平台上使用！（注：受资源限制，这里只部署了通用OCR模型。）'
 
-    ocr_input_image = gr.components.Image(label='image', type='pil')
+    ocr_input_image = gr.components.Image(label='图片', type='pil')
 
-    ocr_output_image = gr.components.Image(label='image')
-    ocr_output_text = gr.components.Dataframe(headers=['Box ID', 'Text'])
+    ocr_output_image = gr.components.Image(label='图片')
+    ocr_output_text = gr.components.Dataframe(label='OCR结果', headers=['ID', '文本'])
 
     ocr_demo = gr.Interface(
         fn=ocr_api,
@@ -91,5 +89,6 @@ if __name__ == "__main__":
             ["OCR识别"],
     ) as demo:
         demo.launch(
+            share=True,
             enable_queue=True,
         )
