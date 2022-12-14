@@ -1,5 +1,12 @@
 ---
 license: Apache License 2.0
+domain:
+- multi-modal
+tags:
+- Alibaba
+- OFA
+- OCR
+- 光学字符识别
 
 models:
 - damo/ofa_ocr-recognition_general_base_zh
