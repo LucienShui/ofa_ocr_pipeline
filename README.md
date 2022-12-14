@@ -16,7 +16,7 @@ models:
 - damo/ofa_ocr-recognition_web_base_zh
 
 deployspec:
-  image_id: "mshub-registry.cn-zhangjiakou.cr.aliyuncs.com/modelscope-repo/studio-service:py38-1.1.0rc0-0.3.3"
+  image_id: "mshub-registry.cn-zhangjiakou.cr.aliyuncs.com/modelscope-repo/studio-service:py38-1.1.0rc0-0.3.3_gpu"
   cpu: 4
   memory: 8000
   gpu: 0
