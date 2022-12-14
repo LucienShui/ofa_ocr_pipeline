@@ -20,7 +20,7 @@ deployspec:
   cpu: 8
   memory: 16000
   gpu: 0
-  gpu_memory: 8000
+  gpu_memory: 8
   instance: 1
 ---
 # OFA文字识别PIPELINE
