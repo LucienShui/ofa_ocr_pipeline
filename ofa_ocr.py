@@ -84,11 +84,8 @@ def ofa_ocr_gr():
 
 
 if __name__ == "__main__":
-    with gr.TabbedInterface(
-            [ofa_ocr_gr()],
-            ["OCR识别"],
-    ) as demo:
-        demo.launch(
+    ocr_demo = ofa_ocr_gr()
+    ocr_demo.launch(
             share=True,
             enable_queue=True,
         )

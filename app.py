@@ -3,8 +3,7 @@ from ofa_ocr import ofa_ocr_gr
 
 if __name__ == "__main__":
     gr.close_all()
-    with gr.TabbedInterface(
-            [ofa_ocr_gr()],
-            ["OFA OCR识别"],
-    ) as demo:
-        demo.launch()
+    ocr_demo = ofa_ocr_gr()
+    ocr_demo.launch(
+        enable_queue=True,
+    )
